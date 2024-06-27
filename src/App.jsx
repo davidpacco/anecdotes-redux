@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { voteAnecdoteOf } from './reducers/anecdoteReducer'
 
 function App() {
   const anecdotes = useSelector(state => state)
   const dispatch = useDispatch()
 
-  const vote = (id) => {
-    console.log('vote', id)
-  }
+  const vote = (id) => dispatch(voteAnecdoteOf(id))
 
   return (
     <div>
@@ -22,10 +21,10 @@ function App() {
           </div>
         </div>
       )}
-      <h2>create new</h2>
+      <h2>Create new</h2>
       <form>
         <div><input /></div>
-        <button>create</button>
+        <button>Create</button>
       </form>
     </div>
   )
