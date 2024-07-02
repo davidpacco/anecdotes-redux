@@ -12,12 +12,7 @@ export function AnecdoteList() {
   const dispatch = useDispatch()
 
   const vote = (anecdote) => {
-    const updatedAnecdote = {
-      ...anecdote,
-      votes: anecdote.votes + 1
-    }
-
-    dispatch(voteAnecdote(anecdote.id, updatedAnecdote))
+    dispatch(voteAnecdote(anecdote))
     dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
   }
 
